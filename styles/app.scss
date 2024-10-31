@@ -1,4 +1,11 @@
+@use 'sass:math';
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@function vw($px) {
+	$vw: 100vw;
+	@return math.div($px, 1440) * $vw;
+}
 
 *,
 *::before,
@@ -12,7 +19,7 @@ body {
 	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-variation-settings: 'slnt' 0;
-	font-size: 20px;
+	font-size: vw(20);
 	line-height: 1;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -31,9 +38,9 @@ img {
 	border: none;
 	background: black;
 	color: white;
-	padding: 12px 40px;
-	border-radius: 100px;
-	font-size: 16px;
+	padding: vw(12) vw(40);
+	border-radius: vw(100);
+	font-size: vw(16);
 	cursor: pointer;
 }
 
@@ -47,12 +54,12 @@ img {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	height: 100px;
-	padding-inline: 24px;
+	height: vw(100);
+	padding-inline: vw(24);
 }
 
 .header__logo {
-	font-size: 40px;
+	font-size: vw(40);
 }
 
 .preloader {
@@ -82,6 +89,8 @@ img {
 	line-height: 1;
 	z-index: 3;
 	color: white;
+	margin-bottom: vw(-2);
+	padding-bottom: vw(2);
 }
 
 .preloader__text span {
@@ -98,14 +107,14 @@ img {
 	align-items: center;
 	color: white;
 	text-align: center;
-	padding-inline: 24px;
+	padding-inline: vw(24);
 }
 
 .hero__wrapper {
-	border-radius: 16px;
+	border-radius: vw(16);
 	overflow: hidden;
-	height: calc(100vh - 124px);
-	margin-inline: 24px;
+	height: calc(100vh - vw(124));
+	margin-inline: vw(24);
 }
 
 .hero__image {
@@ -119,8 +128,10 @@ img {
 
 .hero__caption {
 	overflow: hidden;
-	margin-bottom: 32px;
-	font-size: 18px;
+	margin-bottom: vw(32);
+	font-size: vw(18);
+	padding-bottom: vw(2);
+	margin-bottom: vw(-2);
 }
 
 .hero__caption span {
@@ -128,10 +139,10 @@ img {
 }
 
 .hero__title {
-	font-size: 104px;
+	font-size: vw(104);
 	font-weight: 400;
 	max-width: 11ch;
-	margin-bottom: 64px;
+	margin-bottom: vw(64);
 	line-height: 1.2;
 	letter-spacing: -0.03em;
 }
@@ -140,6 +151,8 @@ img {
 	display: block;
 	overflow: hidden;
 	line-height: 1.05;
+	padding-bottom: vw(5);
+	margin-bottom: vw(-5);
 }
 
 .hero__title span span {
